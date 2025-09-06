@@ -1,0 +1,13 @@
+all:
+  hosts:
+    Your-Server-NameandInfo01:
+      ansible_hosts: Your-Hosts-PrivateIp
+      ansible_user:  Example:ec2-user  
+      ansible_ssh_private_key_file: privatekey.pem 
+      
+      
+
+#You show create a file named "privatekey.pem" in the same directory as the inventory file.
+#And permission to the file should be 400.
+#In Ansible Configuration host key checking should be false example:- host_key_checking=False
+#To check you can use ping example:- ansible server-name -m ping -i inventory

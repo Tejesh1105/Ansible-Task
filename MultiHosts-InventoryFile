@@ -1,0 +1,31 @@
+all:
+  hosts:
+    host1:
+      ansible_hosts: Your-Hosts-PrivateIp1
+      ansible_user:  Example:ec2-user  
+      ansible_ssh_private_key_file: privatekey.pem 
+    host2:
+      ansible_hosts: Your-Hosts-PrivateIp2
+      ansible_user:  Example:ec2-user  
+      ansible_ssh_private_key_file: privatekey.pem
+    host3:
+      ansible_hosts: Your-Hosts-PrivateIp3
+      ansible_user:  Example:ec2-user  
+      ansible_ssh_private_key_file: privatekey.pem    
+  children:
+    webservers:
+      hosts:
+        host1:
+        host2:
+    dbservers:
+      hosts:
+        host3:
+    all_groups:
+      children:
+        webservers:
+        dbservers:        
+#If there are 100s of hosts you cannot ping all of them one by one. You solve that problem we can use grouping.
+#Here webservers and dbservers is just for understanding we can group them anywhere. We can also group those groups togther. 
+#To ping a group: "ansible group-name -m ping -i multihost-inventory"
+
+  

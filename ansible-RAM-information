@@ -1,0 +1,7 @@
+---
+- name: Print facts
+  hosts: all
+  tasks:
+    - name: Print RAM information
+      debug:
+        var: ansible_memory_mb.real.free

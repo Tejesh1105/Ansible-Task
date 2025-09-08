@@ -3,9 +3,9 @@
   hosts: dbserver
   become: yes
   vars:
-  dbname: onepiece
-  dbuser: Goldroger
-  dbpass: shanks
+  dbname: godvalley
+  dbuser: garling
+  dbpass: shamrock
   tasks: 
     - debug:
         msg: "The dbname is {{dbname}}"

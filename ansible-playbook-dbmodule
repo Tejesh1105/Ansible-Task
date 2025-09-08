@@ -31,5 +31,6 @@
          password: 123456
          priv: '*.*:ALL'
          state: present 
+         login_unix_socket: /var/lib/mysql/mysql.sock
 
 #Task:- Create a database "accounts" and create a username "user" in the mysql/mariadb database using data base module.

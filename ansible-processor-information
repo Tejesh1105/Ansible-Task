@@ -1,0 +1,7 @@
+---
+- name: Print facts
+  hosts: all
+  tasks:
+    - name: Print processor name
+      debug:
+        var: ansible_processor[2]

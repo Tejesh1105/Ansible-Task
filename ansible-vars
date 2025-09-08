@@ -7,6 +7,10 @@
   dbuser: Goldroger
   dbpass: shanks
   tasks: 
+    - debug:
+        msg: "The dbname is {{dbname}}"
+    - debug:
+         var: dbuser
     - name: Install mariadb-server
       ansible.builtin.yum:
         name: mariadb-server
